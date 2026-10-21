@@ -21,9 +21,17 @@ void* add(char* type, void* vlhs, void* vrhs )
   //return 1;
 }
 
-}
 int main(int argc, char* argv[])
 {
-  addInt(5,4,"int");
-  printf("The answer is: %d", addInt(5,4,"int"));
+  int x = 5;
+  int y = 10;
+
+  // creating the result output for int 
+  void* result = add("int", &x, &y);
+  int* resultInt = (int*)result;
+
+
+
+  printf("Result is: %d\n", *resultInt);
+
 }
