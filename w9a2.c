@@ -6,16 +6,20 @@ struct Boat{
   int engineSize;
 };
 
-int compareBoat(struct Boat boat1, struct Boat boat2 ){
+int compareBoat(struct Boat lhs, struct Boat vhs ){
   // compare length of boat and engine size
-  if(boat1 == boat2){
+  Boat* boat1 = (Boat*) lhs;
+  Boat* boat2 = (Boat*) vhs;
+  if( boat1-> length == boat2-> length && boat1-> enginesize == boat2-> engineSize){
     return 0;
   } else {
-    return 1;
+    return -1;
   }
+
 }
 
 void printBoat(struct Boat myBoat){
+  Boat* pri = (Boat*) myBoat;
   printf("The boat is %d in length and %d in engine size.\n", myBoat.length, myBoat.engineSize);
 }
 
